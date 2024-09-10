@@ -22,7 +22,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: oven-sh/setup-bun@v2
-    
+      with:
+        cache-hit: false
+    - run: curl -fsSL https://bun.sh/install | bash
     - run: sudo bun --version
     
     - run: sudo bun install
