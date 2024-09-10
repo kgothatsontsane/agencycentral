@@ -25,7 +25,7 @@ jobs:
       with:
         cache-hit: false
     - run: curl -fsSL https://bun.sh/install | bash
-    - run: sudo bun --version
+    - run: bun --version
     
     - run: sudo bun install
     - run: sudo bun run build
