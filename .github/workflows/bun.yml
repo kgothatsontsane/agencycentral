@@ -1,7 +1,7 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+# This workflow will do a clean installation of bun dependencies, cache/restore them, build the source code and run tests 
 
-name: Bun.js CI Build
+
+name: Setup Bun Runtime
 
 on:
   push:
@@ -18,8 +18,10 @@ jobs:
     - uses: actions/checkout@v4
     - uses: oven-sh/setup-bun@v2
       with:
-       no-cache: true
+       cache: true
+       cache-bin: true
        bun-version: latest
+       token: 'gh-token'
        
     - name: Check bun version
       run: bun --version
@@ -29,6 +31,9 @@ jobs:
     
     - name: Install dependencies
       run: bun install
+
+    - name: Run tests
+      run: bun test
     
     - name: Build and run the source code
       run: bun run build
