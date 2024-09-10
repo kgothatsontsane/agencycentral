@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    name: Use bun ${{ bun-version }}
+    name: Install and use the latest bun version
     runs-on: ubuntu-latest
 
     steps:
@@ -20,9 +20,17 @@ jobs:
       with:
        no-cache: true
        bun-version: latest
-
-    - run: bun --version    
-    - run: bun install
-    - run: bun run build
+       
+    - name: Check bun version
+      run: bun --version
+      
+    - name: Check bun version
+      run: bun --version
+    
+    - name: Install dependencies
+      run: bun install
+    
+    - name: Build and run the source code
+      run: bun run build
   
 
