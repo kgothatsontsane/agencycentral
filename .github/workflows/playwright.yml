@@ -9,8 +9,7 @@ on:
     branches: [ "production" ]
 
 jobs:
-  build:
-    
+  
   run_e2e_tests:
     name: Run end-to-end tests
     runs-on: ubuntu-latest
