@@ -17,8 +17,7 @@ jobs:
     - uses: actions/checkout@v4
     - uses: oven-sh/setup-bun@v2
       with:
-       cache: true
-       cache-bin: true
+       no-cache: false
        bun-version: latest
        token: 'gh-token'
        
