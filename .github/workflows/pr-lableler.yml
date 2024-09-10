@@ -29,13 +29,3 @@ jobs:
       pull-requests: write
     runs-on: ubuntu-latest
     
-    # Label PRs 1, 2, 3, 4 and 5
-    steps:
-    - uses: actions/labeler@v5
-      with:        
-        pr-number: |
-          1
-          2
-          3
-          4
-          5
