@@ -22,4 +22,13 @@ jobs:
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
         configuration-path: '.github/labeler.yml'
-
+        
+    # Label PRs 1, 2, 3, 4 and 5
+    - uses: actions/labeler@v5
+      with:        
+        pr-number: |
+          1
+          2
+          3
+          4
+          5
