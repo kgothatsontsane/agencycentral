@@ -8,9 +8,7 @@ on:
   pull_request:
     branches: [ "production" ]
 
-jobs:
-  build:
-    
+jobs:  
   run_e2e_tests:
     name: Run end-to-end tests
     runs-on: ubuntu-latest
