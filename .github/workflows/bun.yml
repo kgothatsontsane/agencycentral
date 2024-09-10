@@ -26,10 +26,15 @@ jobs:
     - name: Install dependencies
       run: bun install
 
-    - name: Run tests
-      run: bun test
-    
+
     - name: Build and run the source code
       run: bun run build
+      
+    - name: Run end-to-end playright tests
+      run: |
+        bunx playwright install
+        bun --bun playwright test
+    
+      
   
 
