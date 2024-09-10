@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-
+    name: Use bun ${{ matrix.bun-version }}
     runs-on: ubuntu-latest
 
     strategy:
@@ -22,8 +22,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: oven-sh/setup-bun@v2
-    - name: Use bun ${{ matrix.node-version }}
-
+    
     - run: sudo bun install
     - run: sudo bun --version
     - run: sudo bun run build
