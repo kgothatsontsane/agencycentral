@@ -24,10 +24,10 @@ jobs:
     - uses: oven-sh/setup-bun@v2
       with:
        no-cache: true
-    - run: curl -fsSL https://bun.sh/install | bash
+    #- run: curl -fsSL https://bun.sh/install | bash
     - run: bun --version
     
-    - run: sudo bun install
-    - run: sudo bun run build
+    - run: bun install
+    - run: bun run build
   
 
