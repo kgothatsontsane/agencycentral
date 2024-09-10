@@ -19,11 +19,7 @@ jobs:
       with:
        no-cache: false
        bun-version: latest
-       token: 'gh-token'
        
-    - name: Check bun version
-      run: bun --version
-      
     - name: Check bun version
       run: bun --version
     
