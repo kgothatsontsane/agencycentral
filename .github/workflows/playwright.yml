@@ -1,0 +1,42 @@
+# This workflow will run bun and build the source code and run end-to-end tests using playwright
+
+name: Playwright Tests
+
+on:
+  push:
+    branches: [ "production" ]
+  pull_request:
+    branches: [ "production" ]
+
+jobs:
+  build:
+    name: Install and use the latest bun version
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: oven-sh/setup-bun@v2
+      with:
+       no-cache: false
+       bun-version: latest
+       
+    - name: Install bun dependencies
+      run: bun install          
+      
+    - name: Install playwright dependencies
+      run:  bunx playwright install-deps
+      
+    - name: Install playwright
+      run:  bunx playwright install
+      
+    - name: Build and run the source code
+      run: bun run dev &
+      env:
+        CI: true
+    
+    - name: Wait for Server to be Ready
+      run: bunx wait-on http://localhost:3000
+      
+    - name: Run end-to-end playright tests
+      run:  bun --bun playwright test
+    
