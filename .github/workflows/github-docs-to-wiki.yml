@@ -21,6 +21,6 @@ jobs:
       - name: Sync docs folder to wiki
         uses: cmbrose/github-docs-to-wiki@v0.20
         with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          githubToken: ${{ secrets.WIKI_TOKEN }}
           convertRootReadmeToHomePage: true
           defaultBranch: production
