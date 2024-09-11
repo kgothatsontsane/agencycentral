@@ -12,12 +12,16 @@ on:
   workflow_dispatch:
 
 jobs:
-    sync-content-to-wiki:
-    runs-on: [ ubuntu-latest ]
+  sync-content-to-wiki:
+    runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Sync docs folder to wiki
         uses: cmbrose/github-docs-to-wiki@v0.20
         with:
-            githubToken: ${{ secrets.GITHUB_TOKEN }}
-            WIKI_REPO: ${{ secrets.WIKI_SYNC_SECRET }}
-            COMMIT_MESSAGE: "Sync docs to wiki"
-            COMMIT_AUTHOR: "GitHub Action"
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          WIKI_REPO: ${{ secrets.WIKI_SYNC_SECRET }}
+          COMMIT_MESSAGE: "Sync docs to wiki"
+          COMMIT_AUTHOR: "GitHub Action"
