@@ -3,8 +3,8 @@ name: Wiki Content Sync
 on:
   push:
     branches:
-      - master
-      - main
+      - production
+      - development
     paths:
       - "docs/**"
   repository_dispatch:
@@ -81,7 +81,7 @@ jobs:
           destination_branch: ${{ github.event.repository.default_branch }}
           pr_title: "[Chore] - Syncing Wiki changes in ${{ env.SYNC_CHANGES_REPO_NAME }} into default branch"
           pr_body: ":crown: *An automated PR* This is an automated PR to sync this repository's wiki docs with your docs in the repo via a PR."
-          pr_label: "docs,automation"
+          pr_label: "documentation,automation"
           pr_draft: false
           pr_allow_empty: false
           github_token: ${{ secrets.WIKI_SYNC_SECRET }}
