@@ -29,6 +29,6 @@ jobs:
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./landing-page/deployment
+        publish_dir: //landing-page/deployment
         
         # cname: your-website-name.com # Optional: Custom domain if needed
