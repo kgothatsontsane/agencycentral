@@ -28,10 +28,6 @@ export default function LandingPage() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const scrollVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
   
   return (
     <div className="min-h-screen bg-background text-foreground font-dm-sans">
