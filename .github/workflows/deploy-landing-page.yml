@@ -8,12 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: '22'
+        node-version: '20'
 
     - name: Install dependencies
       run: |
@@ -27,9 +27,9 @@ jobs:
         npm run export
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./landing-page/deploy
+        publish_dir: ./landing-page/out
         
         # cname: your-website-name.com # Optional: Custom domain if needed
