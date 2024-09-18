@@ -1,3 +1,13 @@
 {
-    "editor.defaultFormatter": "aaron-bond.better-comments"
+    "editor.defaultFormatter": "aaron-bond.better-comments",
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    },
+    "cSpell.words": [
+        "agencycentral",
+        "Holberton"
+    ]
 }
