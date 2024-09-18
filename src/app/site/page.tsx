@@ -56,6 +56,7 @@ export default async function Home() {
           </h1>
         </div>
          <p className="text-4xl leading-loose text-center md:text-[3.5rem]">Centralise your workflow</p>
+              <p className="text-4xl leading-loose text-center md:text-[3.5rem]">Amplify</p>
         <div className="flex justify-center items-center relative md:mt-[-0.2rem] pr-4 pl-4">
           <Image
             src={'/assets/preview.png'}

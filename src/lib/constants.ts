@@ -1,7 +1,7 @@
 export const pricingCards = [
   {
     title: 'Starter',
-    description: 'Perfect for trying out plura',
+    description: 'Perfect for starting out',
     price: 'Free',
     duration: '',
     highlight: 'Key features',
