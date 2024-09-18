@@ -1,0 +1,35 @@
+name: Deploy Landing Page
+
+on:
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '22'
+
+    - name: Install dependencies
+      run: |
+        cd landing-page
+        npm ci
+
+    - name: Build and Export Landing Page
+      run: |
+        cd landing-page
+        npm run build
+        npm run export
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./landing-page/deploy
+        
+        # cname: your-website-name.com # Optional: Custom domain if needed
