@@ -31,4 +31,5 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./landing-page/deployment
         
+        
         # cname: your-website-name.com # Optional: Custom domain if needed
