@@ -9,6 +9,10 @@ const nextConfig = {
   // skipTrailingSlashRedirect: true,
  
   // Optional: Change the output directory `out` -> `dist`
-  distDir: 'deployment',};
+  distDir: 'deployment',
+  images: {
+    unoptimized: true
+  },
+};
 
 export default nextConfig;
