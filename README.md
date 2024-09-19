@@ -1,6 +1,6 @@
 # Welcome to Agency Central
 
-![Agency Central](/public/assets/banner-image.png)
+![Agency Central](/public/assets/banner-image.jpg)
 
 ## 📜 Overview
 
