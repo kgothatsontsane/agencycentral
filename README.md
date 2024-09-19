@@ -110,4 +110,4 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 To learn more about AgencyCentral, take a look at the following resources:
 
-- [Issues](https://github.com/kgothatsontsane/agencycentral/issues/) - learn about Next.js features and API.
+- [Issues](https://github.com/kgothatsontsane/agencycentral/issues/) - learn about current issues.
