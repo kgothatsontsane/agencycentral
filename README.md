@@ -91,7 +91,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 
 ## ✍️ Contributing
 
-Contributions are welcome! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE-OF-CONDUCT.md](CODE-OF-CONDUCT.md) for guidelines.
+Contributions are welcome! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE-OF-CONDUCT.md](CODE_OF_CONDUCT.md) for guidelines.
 
 ## Credits:
 
