@@ -1,4 +1,47 @@
-# Agency Central
+# <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Animation</title>
+<style>
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  .welcome {
+    font-size: 24px;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+  }
+  .welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+</style>
+</head>
+<body>
+<div class="welcome-container">
+  <div class="welcome">Welcome (English)</div>
+  <div class="welcome">Bienvenue (French)</div>
+  <div class="welcome">Bienvenido (Spanish)</div>
+  <div class="welcome">Willkommen (German)</div>
+  <div class="welcome">Benvenuto (Italian)</div>
+  <div class="welcome">いらっしゃいませ (Japanese)</div>
+  <div class="welcome">환영합니다 (Korean)</div>
+  <div class="welcome">欢迎 (Chinese)</div>
+  <div class="welcome">Добро пожаловать (Russian)</div>
+  <div class="welcome">Bem-vindo (Portuguese)</div>
+</div>
+</body>
+</html>
+
+
+![Agency Central](/assets/banner-image.png)
 
 ## 📜 Overview
 
