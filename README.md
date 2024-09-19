@@ -4,30 +4,34 @@
 
 **Agency Central** is a comprehensive digital agency platform designed to centralize workflow and amplify growth. It offers a suite of tools and features tailored for project management, marketing, and business operations.
 
+
+
+
 ## 🚀 Features
 
-- **Multivendor B2B2B SaaS**: 🏢 Provides a scalable solution for businesses operating in a multi-vendor environment.
-- **Agency and Sub Accounts**: 👥 Supports hierarchical user management with agency-level and sub-account structures.
-- **Unlimited Funnel Hosting**: 📈 Hosts an unlimited number of sales funnels and landing pages.
-- **Full Website & Funnel Builder**: 🛠️ Comprehensive tools for creating and customizing websites and funnels.
-- **Role-based Access**: 🔒 Defines user roles and permissions based on responsibilities.
-- **Stripe Subscription Plans**: 💳 Integrates with Stripe for managing subscription plans.
-- **Stripe Add-on Products**: ➕ Allows addition of supplementary products and services to subscriptions.
-- **Connect Stripe Accounts for All Users**: 🔗 Facilitates account connections for individual users through Stripe Connect.
-- **Charge Application Fee Per Sale and Recurring Sales**: 💵 Configures application fees for transactions.
-- **Custom Dashboards**: 📊 Provides customizable dashboards for visualizing key metrics.
-- **Media Storage**: 📁 Offers secure storage solutions for media assets.
-- **Stripe Product Sync**: 🔄 Syncs product data with Stripe to maintain consistency.
-- **Custom Checkouts on Funnels**: 💼 Designs personalized checkout processes for funnels.
-- **Get Leads from Funnels**: 📧 Captures and manages leads generated through funnels.
-- **Kanban Board**: 🗂️ Implements a Kanban-style board for visual task management.
-- **Project Management System**: 📅 Comprehensive tools for managing projects, tasks, and deadlines.
-- **Notifications**: 🔔 Configures real-time notifications for updates and alerts.
-- **Funnel Performance Metrics**: 📉 Tracks and analyzes performance metrics of funnels.
-- **Agency and Git Metrics**: 📈 Monitors agency performance and integrates with Git.
-- **Graphs and Charts**: 📈 Visualizes data through various graphs and charts.
-- **Light & Dark Mode**: 🌗 Provides options for both light and dark user interfaces.
-- **Functioning Landing Page**: 🌐 Includes a fully operational landing page to showcase the application.
+- **Multivendor B2B2B SaaS** 🏢: Scalable solution for multi-vendor environments.
+- **Agency and Sub Accounts** 👥: Hierarchical user management with agency-level and sub-accounts.
+- **Unlimited Funnel Hosting** 📈: Host unlimited sales funnels and landing pages.
+- **Full Website & Funnel Builder** 🛠️: Tools for creating and customizing websites and funnels.
+- **Role-based Access** 🔒: Manage user roles and permissions.
+- **Stripe Subscription Plans** 💳: Integrates with Stripe for subscriptions.
+- **Stripe Add-on Products** ➕: Add supplementary products and services to subscriptions.
+- **Connect Stripe Accounts** 🔗: Connect individual user accounts through Stripe Connect.
+- **Charge Application Fees** 💵: Set application fees for transactions.
+- **Custom Dashboards** 📊: Customizable dashboards for key metrics.
+- **Media Storage** 📁: Secure storage for media assets.
+- **Stripe Product Sync** 🔄: Sync product data with Stripe.
+- **Custom Checkouts on Funnels** 💼: Design personalized checkout processes.
+- **Get Leads from Funnels** 📧: Capture and manage leads from funnels.
+- **Kanban Board** 🗂️: Visual task management with Kanban.
+- **Project Management System** 📅: Tools for managing projects, tasks, and deadlines.
+- **Notifications** 🔔: Real-time notifications for updates and alerts.
+- **Funnel Performance Metrics** 📉: Track and analyze funnel performance.
+- **Agency and Git Metrics** 📈: Monitor agency performance and integrate with Git.
+- **Graphs and Charts** 📈: Visualize data with graphs and charts.
+- **Light & Dark Mode** 🌗: Options for light and dark interfaces.
+- **Functioning Landing Page** 🌐: Includes a fully operational landing page.
+
 
 ## Credits:
 
@@ -42,7 +46,7 @@ AgencyCentral Logo
 
 Font
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [DM_SANS](https://fonts.google.com/specimen/DM+Sans), font family from Google.
-T
+
 
 ### 📚 Installation
 
@@ -86,6 +90,7 @@ To get started with Agency Central, follow these steps:
 
 ## 🔗 Links
 
+- **Landing Page**: [Visit Agency Central](https://kgothatsontsane.github.io/agencycentral-landing-page/)
 - **Deployed Site**: [Visit Agency Central](https://your-deployed-site.com)
 - **Source Code**: [GitHub Repository](https://github.com/your-repo/agency-central)
 - **Author Profile**: [Your Website](https://your-website.com)
