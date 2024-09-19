@@ -83,7 +83,7 @@ To get started with Agency Central, follow these steps:
 - **Landing Page**: [Visit Agency Central](https://kgothatsontsane.github.io/agencycentral-landing-page/)
 - **Deployed Site**: [Visit Agency Central](https://your-deployed-site.com)
 - **Source Code**: [GitHub Repository](https://github.com/your-repo/agency-central)
-- **Author Profile**: [Your Website](https://your-website.com)
+- **Linkedin Profile**: [Your Website](https://linkedin.com/in/kgothatsontsane)
 
 ## 📜 License
 
