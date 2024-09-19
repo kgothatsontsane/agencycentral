@@ -4,8 +4,9 @@
 
 ## 📜 Overview
 
-**Agency Central** is a comprehensive digital agency platform designed to centralize workflow and amplify growth. It offers a suite of tools and features tailored for project management, marketing, and business operations.
+Running a digital agency has given me unique insights into the challenges and opportunities faced by businesses in the digital age💡. My journey into this project stems from my desire to address a fundamental issue I frequently encountered: the need for an all-in-one solution that simplifies and enhances workflow management.
 
+**Agency Central** is a comprehensive digital agency platform designed to centralize workflow and amplify growth. It offers a suite of tools and features tailored for project management, marketing, and business operations.
 
 
 
@@ -35,19 +36,6 @@
 - **Functioning Landing Page** 🌐: Includes a fully operational landing page.
 
 
-## Credits:
-
-Website with background grids
-[ibelick](https://bg.ibelick.com/)
-
-Shadcn UI Theme creator
-[Link To Website](https://gradient.page/tools/shadcn-ui-theme-generator)
-
-AgencyCentral Logo
-<a href="https://www.freepik.com/icon/mouse-clicker_9131365#fromView=image_search&page=2&position=8&uuid=328f198f-f8bb-4b3a-8305-44fb0c5e005a">Icon by Icon home</a>
-
-Font
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [DM_SANS](https://fonts.google.com/specimen/DM+Sans), font family from Google.
 
 
 ### 📚 Installation
@@ -104,6 +92,19 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## ✍️ Contributing
 
 Contributions are welcome! Please see the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## Credits:
+
+Website with background grids
+[ibelick](https://bg.ibelick.com/)
+
+Shadcn UI Theme creator
+[Link To Website](https://gradient.page/tools/shadcn-ui-theme-generator)
+
+AgencyCentral Logo
+<a href="https://www.freepik.com/icon/mouse-clicker_9131365#fromView=image_search&page=2&position=8&uuid=328f198f-f8bb-4b3a-8305-44fb0c5e005a">Icon by Icon home</a>
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [DM_SANS](https://fonts.google.com/specimen/DM+Sans), font family from Google.
 
 ## Learn More
 
