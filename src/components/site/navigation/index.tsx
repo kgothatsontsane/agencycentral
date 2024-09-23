@@ -1,16 +1,11 @@
 import { ModeToggle } from '@/components/global/mode-toggle'
 import { UserButton } from '@clerk/nextjs'
-import { User } from '@clerk/nextjs/server'
+//import { User } from '@clerk/nextjs/server'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-type Props = {
-  user?: null | User
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const Navigation = ({ user }: Props) => {
+const Navigation = () => {
   return (
     <div className="fixed top-0 right-0 left-0 p-4 flex items-center justify-between z-10 bg-white dark:bg-slate-950 ">
       <aside className="flex items-center gap-2">
