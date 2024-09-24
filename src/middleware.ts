@@ -20,8 +20,12 @@ export default clerkMiddleware(async (auth, req) => {
             return NextResponse.rewrite(new URL('/site', req.url));
         }
         
-        if (url.pathname === '/sign-in' || url.pathname === '/sign-up') {
+        if (url.pathname === '/sign-in' ) {
             return NextResponse.redirect(new URL(`/agency/sign-in`, req.url));
+        }
+        
+        if (url.pathname === '/sign-up') {
+            return NextResponse.redirect(new URL(`/agency/sign-up`, req.url));
         }
         // Non Public Routes
         if (!isPublicRoute(req)) {
