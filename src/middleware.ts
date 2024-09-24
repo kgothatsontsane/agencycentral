@@ -1,39 +1,57 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 
-const isPublicRoute = createRouteMatcher(['/','/site', '/api/uploadthing', '/sign-in', '/sign-up']);
+const isPublicRoute = createRouteMatcher(['/site', '/api/uploadthing', '/sign-in', '/sign-up']);
 
 export default clerkMiddleware((auth, req) => {
-    const url = new URL(req.url);
-    const searchParams = url;
+    const url = req.nextUrl;
+    const searchParams = url.searchParams.toString();
     const hostname = req.headers.get('host');
+
+    let debugInfo = `URL: ${url}\nSearch Params: ${searchParams}\nHostname: ${hostname}\n`;
 
     if (!isPublicRoute(req)) {
         auth().protect();
     }
 
     const pathWithSearchParams = `${url.pathname}${searchParams.length > 0 ? `?${searchParams}` : ''}`;
+    debugInfo += `Path with Search Params: ${pathWithSearchParams}\n`;
 
     // If subdomain exists
-    const customSubDomain = hostname?.split(`.${process.env.NEXT_PUBLIC_DOMAIN}`)[0];
+    const customSubDomain = hostname?.split(`${process.env.NEXT_PUBLIC_DOMAIN}`).filter(Boolean)[0];
+    debugInfo += `Custom Subdomain: ${customSubDomain}\n`;
 
-    if (customSubDomain && customSubDomain !== 'www') {
-        return NextResponse.rewrite(new URL(`/${customSubDomain}${pathWithSearchParams}`, req.url));
+    if (customSubDomain) {
+        debugInfo += `Rewriting to: /${customSubDomain}${pathWithSearchParams}\n`;
+        return NextResponse.rewrite(new URL(`/${customSubDomain}${pathWithSearchParams}`, req.url)).headers.set('X-Debug-Info', debugInfo);
     }
 
     if (url.pathname === '/sign-in' || url.pathname === '/sign-up') {
-        return NextResponse.redirect(new URL(`/agency/sign-in`, req.url));
+        debugInfo += `Redirecting to: /agency/sign-in\n`;
+        return NextResponse.redirect(new URL(`/agency/sign-in`, req.url)).headers.set('X-Debug-Info', debugInfo);
     }
 
     if (url.pathname === '/' || (url.pathname === '/site' && hostname === process.env.NEXT_PUBLIC_DOMAIN)) {
-        return NextResponse.redirect(new URL('/site', req.url));
+        debugInfo += `Rewriting to: /site\n`;
+        return NextResponse.rewrite(new URL('/site', req.url)).headers.set('X-Debug-Info', debugInfo);
     }
     
     if (url.pathname.startsWith('/agency') || url.pathname.startsWith('/subaccount')) {
-        return NextResponse.rewrite(new URL(`${pathWithSearchParams}`, req.url));
+        debugInfo += `Rewriting to: ${pathWithSearchParams}\n`;
+        return NextResponse.rewrite(new URL(`${pathWithSearchParams}`, req.url)).headers.set('X-Debug-Info', debugInfo);
     }
 
-    return NextResponse.next();
+    // Handle /test route
+    if (url.pathname === '/test') {
+        debugInfo += `Handling /test route\n`;
+        const response = new NextResponse('Successful message. Redirecting to /site...', { status: 200 });
+        response.headers.set('Refresh', '3;url=/site'); // Redirect after 3 seconds
+        response.headers.set('X-Debug-Info', debugInfo);
+        return response;
+    }
+
+    debugInfo += `Proceeding to NextResponse.next()\n`;
+    return NextResponse.next().headers.set('X-Debug-Info', debugInfo);
 });
 
 export const config = {
