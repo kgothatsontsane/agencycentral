@@ -21,6 +21,12 @@
 *.pem
 .env
 
+#lockfiles
+bun.lockb
+
+#linting
+.hintrc
+
 # debug
 npm-debug.log*
 yarn-debug.log*
@@ -31,7 +37,10 @@ yarn-error.log*
 .env
 
 # vercel
-.vercel
+/.vercel/
+
+# vscode
+/.vscode/
 
 # typescript
 *.tsbuildinfo
