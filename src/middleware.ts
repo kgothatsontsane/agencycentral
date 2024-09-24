@@ -1,15 +1,18 @@
-import { clerkMiddleware } from '@clerk/nextjs/server';
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 
-const publicRoutes = ['/site', '/sign-in', '/sign-up', '/api/uploadthing'];
+const isPublicRoute = createRouteMatcher(['/site', '/api/uploadthing', '/sign-in', '/sign-up', '/agency/sign-in', '/agency/sign - up']);
 
 export default clerkMiddleware(async (auth, req) => {
-    const { userId } = auth(req);
+    const { userId } = auth();
     const url = req.nextUrl;
     const hostname = req.headers.get('host') || '';
     const searchParams = url.searchParams.toString();
     const pathWithSearchParams = `${url.pathname}${searchParams.length > 0 ? `?${searchParams}` : ''}`;
+    
+    
 
+    
     // Before Auth Middleware
     if (!userId) {
         // Redirect root ('/') to '/site' if user is not authenticated
@@ -18,6 +21,10 @@ export default clerkMiddleware(async (auth, req) => {
         }
         
         if (url.pathname === '/sign-in' || url.pathname === '/sign-up') {
+            return NextResponse.redirect(new URL(`/agency/sign-in`, req.url));
+        }
+        // Non Public Routes
+        if (!isPublicRoute(req)) {
             return NextResponse.redirect(new URL(`/agency/sign-in`, req.url));
         }
         return NextResponse.next();
@@ -45,7 +52,7 @@ export default clerkMiddleware(async (auth, req) => {
     }
 
     return NextResponse.next();
-}, { publicRoutes });
+}, );
 
 export const config = {
     matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
