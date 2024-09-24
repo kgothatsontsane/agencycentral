@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { DM_Sans} from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from '@/providers/theme-provider'
 import { ClerkProvider } from '@clerk/nextjs'
 import { dark } from '@clerk/themes'
-import { ThemeProvider } from '@/providers/theme-provider'
 
 const font = DM_Sans({ subsets: ['latin'] })
 
@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider appearance={{ baseTheme:dark}}>
+    <ClerkProvider appearance={{ baseTheme: dark }}>
         <html lang="en" suppressHydrationWarning>
             <head>
                 <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
@@ -28,7 +28,7 @@ export default function RootLayout({
                 <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
             </head>
-            
+
             <body className={`${font} antialiased`}>
                 <ThemeProvider
                 attribute="class"
@@ -40,8 +40,8 @@ export default function RootLayout({
                     {children}
               
                 </ThemeProvider>
-            </body> 
+            </body>
         </html>
-    </ClerkProvider>
+    </ClerkProvider>    
   );
 }

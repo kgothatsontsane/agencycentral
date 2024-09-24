@@ -16,8 +16,15 @@ export default clerkMiddleware(async (auth, req) => {
         if (url.pathname === '/') {
             return NextResponse.rewrite(new URL('/site', req.url));
         }
+        
+        if (url.pathname === '/sign-in' || url.pathname === '/sign-up') {
+            return NextResponse.redirect(new URL(`/agency/sign-in`, req.url));
+        }
         return NextResponse.next();
+        
     }
+    
+    
 
     // After Auth Middleware
     const customSubDomain = hostname.split(`${process.env.NEXT_PUBLIC_DOMAIN}`).filter(Boolean)[0];
