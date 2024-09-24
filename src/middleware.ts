@@ -1,12 +1,12 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
-import { NextResponse, NextRequestNextRequest } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 
 const isPublicRoute = createRouteMatcher(['/site', '/api/uploadthing', '/sign-in', '/sign-up']);
 
 const isPublicApiRoute = createRouteMatcher([
     "/api/uploadthing"
 ])
-export default clerkMiddleware((auth, req) => {
+export default clerkMiddleware((auth, NextRequest) => {
     const url = new URL(req.url);
     const searchParams = url.searchParams.toString();
     const hostname = req.headers.get('host');
