@@ -1,12 +1,24 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 
 const isPublicRoute = createRouteMatcher(['/site', '/api/uploadthing', '/sign-in', '/sign-up']);
 
+const isPublicApiRoute = createRouteMatcher([
+    "/api/uploadthing"
+])
+
+
 export default clerkMiddleware((auth, req) => {
-    const url = req.nextUrl;
+    req = new NextRequest(new URL('https://agencycentral.vercel.app'), {
+        headers: {
+            host: 'agencycentral.vercel.app',
+        },
+    });
+    const url = new URL(req.url);
     const searchParams = url.searchParams.toString();
     const hostname = req.headers.get('host');
+    const isApiRequest = url.pathname.startsWith("/api")
+
 
     let debugInfo = `URL: ${url}\nSearch Params: ${searchParams}\nHostname: ${hostname}\n`;
 
@@ -36,11 +48,21 @@ export default clerkMiddleware((auth, req) => {
         return NextResponse.rewrite(new URL('/site', req.url)).headers.set('X-Debug-Info', debugInfo);
     }
     
+/*    if (url.pathname === '/' && hostname === process.env.NEXT_PUBLIC_DOMAIN) {
+        debugInfo += `Rewriting to: /site\n`;
+        return NextResponse.rewrite(new URL('/site', req.url)).headers.set('X-Debug-Info', debugInfo);
+    }
+*/   
     if (url.pathname.startsWith('/agency') || url.pathname.startsWith('/subaccount')) {
         debugInfo += `Rewriting to: ${pathWithSearchParams}\n`;
         return NextResponse.rewrite(new URL(`${pathWithSearchParams}`, req.url)).headers.set('X-Debug-Info', debugInfo);
     }
 
+    // If the request is for a protected API and the user is not logged in
+    if (isApiRequest && !isPublicApiRoute(req)) {
+        return NextResponse.redirect(new URL("/sign-in", req.url))
+    }
+    
     // Handle /test route
     if (url.pathname === '/test') {
         debugInfo += `Handling /test route\n`;
@@ -53,6 +75,8 @@ export default clerkMiddleware((auth, req) => {
     debugInfo += `Proceeding to NextResponse.next()\n`;
     return NextResponse.next().headers.set('X-Debug-Info', debugInfo);
 });
+
+
 
 export const config = {
     matcher: [
