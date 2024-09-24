@@ -9,10 +9,10 @@ const isPublicApiRoute = createRouteMatcher([
 
 
 export default clerkMiddleware((auth, req) => {
-    const url = new URL(req.url);
+    const url = req.nextUrl;
     const searchParams = url.searchParams.toString();
     const hostname = req.headers;
-    const isApiRequest = url.pathname.startsWith("/api")
+    const isApiRequest = url.pathname.startsWith("/api");
 
 
     // If the request is for a protected route and the user is not logged in
