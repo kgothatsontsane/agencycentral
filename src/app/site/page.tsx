@@ -46,17 +46,16 @@ export default async function Home() {
 
         <div className="bg-gradient-to-r from-primary to-secondary-foreground text-transparent bg-clip-text relative ">
 
-          <h1 className="text-9xl overflow- leading-tight font-bold text-center md:text-[7.5rem] lg:text-[8.5rem] mt-96 pr-4 pl-4" >
+          <h1 className="text-7xl leading-tight font-bold text-center md:text-[8.5rem] lg:text-[12.5rem] mt-96 pr-4 pl-4" >
             Agency
           </h1>
         </div>
         <div className="bg-gradient-to-l from-primary to-secondary-foreground text-transparent bg-clip-text relative">
-          <h1 className="text-9xl font-bold text-center md:text-[12.5rem] pr-4 pl-4">
+          <h1 className="text-7xl font-bold text-center md:text-[8.5rem] lg:text-[12.5rem] pr-4 pl-4">
             Central
           </h1>
         </div>
-         <p className="text-4xl leading-loose text-center md:text-[3.5rem]">Centralise your workflow</p>
-              <p className="text-4xl leading-loose text-center md:text-[3.5rem]">Amplify</p>
+         <p className="text-2xl leading-loose text-center md:text-[3.5rem]">Centralise your workflow</p>
         <div className="flex justify-center items-center relative md:mt-[-0.2rem] pr-4 pl-4">
           <Image
             src={'/assets/preview.png'}
@@ -69,12 +68,11 @@ export default async function Home() {
         </div>
       </section>
       
-      <section className="flex justify-center items-center flex-col gap-4 md:!mt-20 mt-[60px] ">
+          <section className="flex justify-center items-center flex-col gap-4 mt-[2rem] md:!mt-[28rem] lg:!mt-[28rem]">
         <h2 className="text-4xl text-center"> Choose what fits you right</h2>
         <p className="text-muted-foreground text-center">
           Our straightforward pricing plans are tailored to meet your needs. If
-          {" you're"} not <br />
-          ready to commit you can get started for free.
+          {" you're"} not ready to commit you can get started for free.
         </p>
         <div className="flex  justify-center gap-4 flex-wrap mt-6">
           {prices.data.map((card) => (
