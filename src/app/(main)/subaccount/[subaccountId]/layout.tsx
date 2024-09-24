@@ -6,7 +6,7 @@ import {
   getNotificationAndUser,
   verifyAndAcceptInvitation,
 } from '@/lib/queries'
-import { currentUser } from '@clerk/nextjs'
+import { currentUser } from '@clerk/nextjs/server'
 import { Role } from '@prisma/client'
 import { redirect } from 'next/navigation'
 import React from 'react'
@@ -24,7 +24,7 @@ const SubaccountLayout = async ({ children, params }: Props) => {
     return redirect('/')
   }
 
-  let notifications: any = []
+  let notifications: Array<{ subAccountId: string; [key: string]: any }> = []
 
   if (!user.privateMetadata.role) {
     return <Unauthorized />
