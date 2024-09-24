@@ -25,7 +25,6 @@ export default clerkMiddleware(async (auth, req) => {
     }
     
     
-
     // After Auth Middleware
     const customSubDomain = hostname.split(`${process.env.NEXT_PUBLIC_DOMAIN}`).filter(Boolean)[0];
     
