@@ -26,7 +26,7 @@ export default clerkMiddleware((auth, req) => {
     }
 
     if (url.pathname === '/' || (url.pathname === '/site' && hostname === process.env.NEXT_PUBLIC_DOMAIN)) {
-        return NextResponse.rewrite(new URL('/site', req.url));
+        return NextResponse.redirect(new URL('/site', req.url));
     }
     
     if (url.pathname.startsWith('/agency') || url.pathname.startsWith('/subaccount')) {
