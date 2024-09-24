@@ -10,7 +10,8 @@
         "agencycentral",
         "Holberton",
         "nextjs",
-        "subaccount"
+        "subaccount",
+        "trpc"
     ],
     "WillLuke.nextjs.addTypesOnSave": true,
     "WillLuke.nextjs.hasPrompted": true,
