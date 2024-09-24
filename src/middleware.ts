@@ -1,5 +1,5 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequestNextRequest } from 'next/server';
 
 const isPublicRoute = createRouteMatcher(['/site', '/api/uploadthing', '/sign-in', '/sign-up']);
 
@@ -41,7 +41,7 @@ export default clerkMiddleware((auth, req) => {
         return NextResponse.rewrite(new URL('/site', req.url)).headers.set('X-Debug-Info', debugInfo);
     }
     
-    if (url.pathname === '/') {
+    if (url.pathname === '/' && hostname === process.env.NEXT_PUBLIC_DOMAIN) {
         debugInfo += `Rewriting to: /site\n`;
         return NextResponse.rewrite(new URL('/site', req.url)).headers.set('X-Debug-Info', debugInfo);
     }
@@ -68,6 +68,8 @@ export default clerkMiddleware((auth, req) => {
     debugInfo += `Proceeding to NextResponse.next()\n`;
     return NextResponse.next().headers.set('X-Debug-Info', debugInfo);
 });
+
+
 
 export const config = {
     matcher: [
