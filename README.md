@@ -44,7 +44,7 @@ To get started with Agency Central, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-    git clone https://github.com/your-repo/agency-central.git
+    git clone https://github.com/kgothatsontsane/agencycentral
     ```
 
 2. **Navigate to the project directory:**:
